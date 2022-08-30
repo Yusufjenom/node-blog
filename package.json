@@ -1,18 +1,26 @@
 {
-  "name": "assignment29-blog",
+  "name": "blog",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "Yusuf",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yusufjenom/node-blog.git"
+  },
+  "author": "Dauda Yusuf",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yusufjenom/node-blog/issues"
+  },
+  "homepage": "https://github.com/Yusufjenom/node-blog#readme",
   "dependencies": {
     "ejs": "^3.1.8",
     "express": "^4.18.1",
-    "nodemon": "^2.0.18"
+    "method-override": "^3.0.0",
+    "mongoose": "^6.5.3",
+    "nodemon": "^2.0.19"
   }
 }

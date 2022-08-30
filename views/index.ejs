@@ -8,6 +8,23 @@
             <p>The mission of CapacityBay Inc is simple: build the capacity of U.S veterans, transitioning service members, New Americans, immigrants, refugees as well as others living in areas or substantial unemployment and technology deprived communities such as sub-Sahara Africa and other parts of the world.</p>
              
             </div>
+            <div class="blogs-content">
+                <h2>All Blogs</h2>
+
+                <br><br><br>
+
+                <% if(blogs.length > 0){ %>
+                 <% blogs.forEach((x)=>{ %>
+                   
+                  <a href="/blogs/<%= x._id %>">
+                    <h3 class="title"><%= x.title %></h3>
+                    <p class="body"><%= x.body.substring(0, 30) %></p>
+                    <button class="read-more-btn">Read More...</button>
+                  </a>
+                   <br><br>
+                 <% }) %>
+                <% } %>
+            </div>
         </div>
         
 

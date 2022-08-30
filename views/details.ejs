@@ -1,0 +1,49 @@
+<html lang="en">
+<%- include('../templates/header.ejs') %>
+
+<body>
+<%- include('../templates/nav.ejs') %>
+    <!-- <main> -->
+    <div class="container">
+        <div class="row main">
+            <h1>Details</h1>
+            <div class="blog-content">
+              <p>
+                <h2><%= blog.title %></h2>
+                <p><%= blog.body %></p>
+              </p>
+              <br><br>
+                 <!-- <a >delete</a> -->
+                 <!-- <button class="delete" data-doc="<%= blog._id %>">delete</button> -->
+                 <!-- <a class="delete" href="<%= blog._id %>">delete</a> -->
+                 <form action="/blogs/<%= blog._id%>?_method=DELETE" method="post">
+                     <button type="submit">Delete Post</button>
+                 </form>
+             </div>
+        </div>
+    </div>
+    
+<%- include('../templates/footer.ejs') %>
+
+ 
+<script>
+    const del = document.querySelector('a.delete')
+    del.addEventListener('click', (e)=>{
+     const delTrash = `/blogs/${del.href}`
+     fetch(delTrash, {
+     method: 'DELETE'
+ })
+ .then((response)=>{
+     response.json()
+ })
+ .then((data)=>{
+     window.location.href = data.redirect
+ })
+ .catch((err)=>{
+     console.log(err)
+ })
+ })
+</script>
+
+</body>
+</html>

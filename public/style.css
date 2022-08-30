@@ -125,3 +125,17 @@ h1{
  }
      
 }
+
+.publish-btn{
+    background-color: red;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+}
+.delete{
+    background-color: red;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    cursor: pointer;
+}

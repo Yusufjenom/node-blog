@@ -13,12 +13,16 @@
                 <p><%= blog.body %></p>
               </p>
               <br><br>
-                 <!-- <a >delete</a> -->
-                 <!-- <button class="delete" data-doc="<%= blog._id %>">delete</button> -->
-                 <!-- <a class="delete" href="<%= blog._id %>">delete</a> -->
-                 <form action="/blogs/<%= blog._id%>?_method=DELETE" method="post">
-                     <button type="submit">Delete Post</button>
-                 </form>
+                 
+              
+                    <form action="/delete" method="post">
+                        <label for="delete">Click to Delete</label>
+                        <input type="checkbox" name="checkbox" value="<%= blog._id %>" 
+                        onchange="this.form.submit()" id="delete">
+                     
+                    </form>
+                
+                 
              </div>
         </div>
     </div>

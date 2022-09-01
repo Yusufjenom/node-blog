@@ -89,16 +89,17 @@ app.get('/blogs/:id', (req, res)=>{
  })
 
  // delete route
-app.delete('blogs/:id', (req, res)=>{
-    const id = req.params.id
-    Blog.findByIdAndDelete(id, (err)=>{
-        if(err){
-            console.log(err);
-        }else{
-            res.redirect('/blogs')
-        }
-    })
-    
+
+// app.delete('/blogs/:id', (req, res)=>{
+//     const id = req.params.id
+//     Blog.findByIdAndDelete(id, (err)=>{
+//         if(err){
+//             console.log(err);
+//         }else{
+//             res.redirect('/blogs')
+//         }
+//     })
+//     })    
     //  .then((result)=>{
     //     res.json({redirect: '/blogs'})
     //     //res.redirect('/blogs')
@@ -106,7 +107,17 @@ app.delete('blogs/:id', (req, res)=>{
     //  .catch((err)=>{
     //     console.log(err)
     // })
-})
+    app.post('/delete', (req, res)=>{
+       const del = req.body.checkbox
+       Blog.findByIdAndRemove(del, (err)=>{
+           if(err){
+               console.log(err)
+           }else{
+               res.redirect('/blogs')
+           }
+       })
+    })
+
 
 
 app.listen(process.env.PORT || port, ()=>{
